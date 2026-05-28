@@ -13,7 +13,7 @@ const getBaseUrl = () => {
 };
 
 const BASE_URL = getBaseUrl();
-const API_KEY = (import.meta.env.VITE_CBF_API_KEY as string) || "cbf_live_PENDING_UUID";
+const API_KEY = (import.meta.env.VITE_CBF_API_KEY as string) || "cbf_live_c6118414a2604d20816433640c8ab286";
 
 export interface CBFImage {
   image_url: string;
