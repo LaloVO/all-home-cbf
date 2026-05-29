@@ -64,7 +64,7 @@ const AboutMeSection = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 bg-accent hover:bg-amber-600 text-secondary font-sans uppercase text-[10px] tracking-widest font-bold rounded-full transition-all duration-300 shadow-md flex items-center justify-center gap-2 group active:scale-[0.98]"
+              className="w-full py-3.5 bg-accent hover:bg-palette-sky text-secondary font-sans uppercase text-[10px] tracking-widest font-bold rounded-full transition-all duration-300 shadow-md flex items-center justify-center gap-2 group active:scale-[0.98]"
             >
               <MessageSquare className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
               Atención por WhatsApp

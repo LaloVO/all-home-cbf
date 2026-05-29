@@ -49,7 +49,7 @@ export default function SmartSearchCTA() {
             <div className="pt-4">
               <Link
                 to="/solicita-inmueble"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent hover:bg-amber-600 text-secondary font-sans font-bold text-sm rounded-full transition-all duration-300 shadow-elegant hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent hover:bg-palette-sky text-secondary font-sans font-bold text-sm rounded-full transition-all duration-300 shadow-elegant hover:scale-105"
               >
                 Comenzar Búsqueda Inteligente
                 <ArrowRight className="w-4 h-4" />

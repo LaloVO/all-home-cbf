@@ -40,7 +40,7 @@ const AIFeatureSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-24 md:py-32 px-6 md:px-12 bg-[#1E1712] text-white relative overflow-hidden border-t border-white/5"
+      className="py-24 md:py-32 px-6 md:px-12 bg-[#0d1525] text-white relative overflow-hidden border-t border-white/5"
     >
       {/* Ambient glowing radial light in top-right */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />

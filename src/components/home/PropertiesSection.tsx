@@ -59,7 +59,7 @@ const PropertiesSection = () => {
             <Building2 className="w-12 h-12 text-accent/40 mx-auto mb-4" />
             <h3 className="font-serif text-xl mb-2 italic">Sin Propiedades</h3>
             <p className="font-sans text-sm text-primary/60 font-light mb-6">Actualmente no hay propiedades destacadas registradas en el servidor. Explora nuestro mapa completo para ver las opciones disponibles.</p>
-            <Link to="/mapa" className="px-6 py-2.5 bg-accent hover:bg-amber-600 text-white rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-300">Explorar Mapa</Link>
+            <Link to="/mapa" className="px-6 py-2.5 bg-accent hover:bg-palette-sky text-white rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-300">Explorar Mapa</Link>
           </div>
         ) : (
           /* Mobile horizontal scroll vs Desktop Asymmetric Cascade Masonry Grid */

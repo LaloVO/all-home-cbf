@@ -194,7 +194,7 @@ const ContactSection = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 mt-2 bg-accent hover:bg-amber-600 disabled:bg-accent/60 text-secondary font-sans uppercase text-[10px] tracking-[0.25em] font-bold rounded-full flex items-center justify-center gap-2 shadow-md hover:-translate-y-0.5"
+              className="w-full py-4 mt-2 bg-accent hover:bg-palette-sky disabled:bg-accent/60 text-secondary font-sans uppercase text-[10px] tracking-[0.25em] font-bold rounded-full flex items-center justify-center gap-2 shadow-md hover:-translate-y-0.5"
             >
               <Send className="w-3.5 h-3.5" />
               {isSubmitting ? 'Enviando Asesoría...' : 'Enviar Solicitud Privada'}

@@ -95,7 +95,7 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <Link
               to="/solicita-inmueble"
-              className="px-5 py-2.5 bg-accent hover:bg-amber-600 text-secondary font-sans uppercase text-[9px] tracking-[0.2em] font-bold transition-all duration-300 shadow-sm rounded-full"
+              className="px-5 py-2.5 bg-accent hover:bg-palette-sky text-secondary font-sans uppercase text-[9px] tracking-[0.2em] font-bold transition-all duration-300 shadow-sm rounded-full"
             >
               Búsqueda Inteligente
             </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
           <Link
             to="/solicita-inmueble"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 px-8 py-3 bg-accent text-secondary font-sans uppercase text-xs tracking-[0.2em] rounded-full hover:bg-amber-600 transition-colors duration-300 text-center font-bold"
+            className="mt-4 px-8 py-3 bg-accent text-secondary font-sans uppercase text-xs tracking-[0.2em] rounded-full hover:bg-palette-sky transition-colors duration-300 text-center font-bold"
           >
             Búsqueda Inteligente
           </Link>

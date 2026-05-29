@@ -64,6 +64,13 @@ export default {
           green: "hsl(var(--luxury-green))",
           white: "hsl(var(--luxury-white))",
         },
+        palette: {
+          cyan:   "#07c0cc",
+          sky:    "#2b8fd6",
+          indigo: "#4c69dd",
+          purple: "#6647e2",
+          violet: "#7b2be8",
+        },
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],

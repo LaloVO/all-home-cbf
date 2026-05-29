@@ -93,7 +93,7 @@ const HeroSection = () => {
             
             <button 
               onClick={handleSearch}
-              className="px-8 py-4 rounded-full bg-accent text-secondary font-sans uppercase text-xs tracking-widest font-bold hover:bg-amber-600 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
+              className="px-8 py-4 rounded-full bg-accent text-secondary font-sans uppercase text-xs tracking-widest font-bold hover:bg-palette-sky active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
             >
               <Search className="w-3.5 h-3.5" />
               Buscar Ahora
@@ -159,7 +159,7 @@ const HeroSection = () => {
               href="https://wa.me/528443067080" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="w-full py-3.5 bg-accent hover:bg-amber-600 text-secondary font-sans uppercase text-[10px] tracking-widest font-bold rounded-full transition-all duration-300 shadow-md text-center flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-accent hover:bg-palette-sky text-secondary font-sans uppercase text-[10px] tracking-widest font-bold rounded-full transition-all duration-300 shadow-md text-center flex items-center justify-center gap-2"
             >
               Consultar Disponibles
             </a>

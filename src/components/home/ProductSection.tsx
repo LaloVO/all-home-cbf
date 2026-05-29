@@ -121,7 +121,7 @@ const ProductSection = () => {
                         e.stopPropagation();
                         s.action();
                       }}
-                      className="px-6 py-3 rounded-full bg-accent text-secondary font-sans uppercase text-[10px] tracking-widest font-bold hover:bg-amber-600 transition-colors duration-300 w-fit flex items-center gap-2 group"
+                      className="px-6 py-3 rounded-full bg-accent text-secondary font-sans uppercase text-[10px] tracking-widest font-bold hover:bg-palette-sky transition-colors duration-300 w-fit flex items-center gap-2 group"
                     >
                       {s.ctaText}
                       <ChevronRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
