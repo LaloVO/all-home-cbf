@@ -5,7 +5,7 @@ import { MessageSquare, Calendar, ShieldCheck, Mail, Phone, Users } from 'lucide
 const AboutMeSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { site } = useSiteUser();
+  const { user } = useSiteUser();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -16,7 +16,7 @@ const AboutMeSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const whatsappUrl = `https://wa.me/${(site?.platform_config?.telefono_usuario || '8443067080').trim().replace(/[^0-9]/g, '')}`;
+  const whatsappUrl = `https://wa.me/${(user?.telefono_usuario || '').replace(/[^0-9]/g, '')}`;
 
   return (
     <section 

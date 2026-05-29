@@ -8,8 +8,8 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const { site } = useSiteUser();
-  
+  const { user } = useSiteUser();
+
   const isHomePage = location.pathname === '/';
   const isMapPage = location.pathname === '/mapa';
 
@@ -54,7 +54,7 @@ const Navbar = () => {
     }
   };
 
-  const whatsappUrl = `https://wa.me/${(site?.platform_config?.telefono_usuario || '8443067080').trim().replace(/[^0-9]/g, '')}`;
+  const whatsappUrl = `https://wa.me/${(user?.telefono_usuario || '').replace(/[^0-9]/g, '')}`;
 
   return (
     <nav

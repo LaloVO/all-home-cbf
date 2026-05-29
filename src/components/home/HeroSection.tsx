@@ -1,8 +1,10 @@
 import { Search, MapPin, TrendingUp, Sparkles, Building2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSiteUser } from '@/hooks/useSiteUser';
 
 const HeroSection = () => {
+  const { user } = useSiteUser();
   const [isVisible, setIsVisible] = useState(false);
   const [typedIndex, setTypedIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
@@ -155,10 +157,10 @@ const HeroSection = () => {
           {/* Mini Action Area */}
           <div className="flex flex-col gap-2 pt-2">
             <span className="text-[9px] uppercase tracking-widest text-primary/50 font-bold text-center">Nuestra Línea Directa</span>
-            <a 
-              href="https://wa.me/528443067080" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={`https://wa.me/${(user?.telefono_usuario || '').replace(/[^0-9]/g, '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-3.5 bg-accent hover:bg-palette-sky text-secondary font-sans uppercase text-[10px] tracking-widest font-bold rounded-full transition-all duration-300 shadow-md text-center flex items-center justify-center gap-2"
             >
               Consultar Disponibles

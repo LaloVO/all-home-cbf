@@ -3,11 +3,11 @@ import { useSiteUser } from '@/hooks/useSiteUser';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
-  const { site } = useSiteUser();
+  const { site, user } = useSiteUser();
   const year = new Date().getFullYear();
 
   const brandName = site?.site_name ? site.site_name : 'All Home';
-  const whatsappUrl = `https://wa.me/${(site?.platform_config?.telefono_usuario || '8443067080').trim().replace(/[^0-9]/g, '')}`;
+  const whatsappUrl = `https://wa.me/${(user?.telefono_usuario || '').replace(/[^0-9]/g, '')}`;
 
   return (
     <footer className="bg-secondary text-white/90 pt-24 pb-12 px-6 md:px-12 border-t border-primary/20">
@@ -31,13 +31,13 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
-                  {site?.platform_config?.telefono_usuario || '+52 844 306 7080'}
+                  {user?.telefono_usuario || '+52 844 306 7080'}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-accent shrink-0" />
-                <a href={`mailto:${site?.platform_config?.email_usuario || 'contacto@allhome.mx'}`} className="hover:text-white transition-colors duration-300">
-                  {site?.platform_config?.email_usuario || 'contacto@allhome.mx'}
+                <a href={`mailto:${user?.email_usuario || 'contacto@allhome.mx'}`} className="hover:text-white transition-colors duration-300">
+                  {user?.email_usuario || 'contacto@allhome.mx'}
                 </a>
               </li>
               <li className="flex items-center gap-3">

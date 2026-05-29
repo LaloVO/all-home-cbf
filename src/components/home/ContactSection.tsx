@@ -7,8 +7,8 @@ const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const { toast } = useToast();
-  const { site } = useSiteUser();
-  
+  const { site, user } = useSiteUser();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -55,7 +55,7 @@ const ContactSection = () => {
   const textareaClass = "w-full bg-white/60 border border-primary/20 px-5 py-3.5 text-xs sm:text-sm text-primary outline-none placeholder-primary/40 focus:border-accent focus:bg-white/95 transition-all duration-300 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.02)] resize-none";
 
   const brandName = site?.site_name ? site.site_name : 'All Home';
-  const whatsappUrl = `https://wa.me/${(site?.platform_config?.telefono_usuario || '8443067080').trim().replace(/[^0-9]/g, '')}`;
+  const whatsappUrl = `https://wa.me/${(user?.telefono_usuario || '').replace(/[^0-9]/g, '')}`;
 
   return (
     <section id="contacto" ref={sectionRef} className="py-24 bg-surface scroll-mt-20 border-t border-primary/5">
@@ -86,8 +86,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <span className="block text-[8px] uppercase tracking-widest text-primary/50 font-bold">Envíame un correo</span>
-                <a href={`mailto:${site?.platform_config?.email_usuario || 'contacto@allhome.mx'}`} className="font-bold hover:text-accent transition-colors">
-                  {site?.platform_config?.email_usuario || 'contacto@allhome.mx'}
+                <a href={`mailto:${user?.email_usuario || 'contacto@allhome.mx'}`} className="font-bold hover:text-accent transition-colors">
+                  {user?.email_usuario || 'contacto@allhome.mx'}
                 </a>
               </div>
             </div>
@@ -99,7 +99,7 @@ const ContactSection = () => {
               <div>
                 <span className="block text-[8px] uppercase tracking-widest text-primary/50 font-bold">Llámanos directo</span>
                 <a href={whatsappUrl} className="font-bold hover:text-accent transition-colors">
-                  {site?.platform_config?.telefono_usuario || '+52 844 306 7080'}
+                  {user?.telefono_usuario || '+52 844 306 7080'}
                 </a>
               </div>
             </div>
