@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropertyCard from '@/components/PropertyCard';
-import { useProperties } from '@/hooks/useProperties';
+import { usePropertyCatalog } from '@/hooks/usePropertyCatalog';
 import { useEffect, useRef, useState } from 'react';
 import { Building2, ArrowRight } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const SkeletonCard = () => (
 const PropertiesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { properties, isLoading } = useProperties({ limit: 6 });
+  const { standaloneUnits: properties, isLoading } = usePropertyCatalog();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,53 +62,11 @@ const PropertiesSection = () => {
             <Link to="/mapa" className="px-6 py-2.5 bg-accent hover:bg-palette-sky text-white rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-300">Explorar Mapa</Link>
           </div>
         ) : (
-          /* Mobile horizontal scroll vs Desktop Asymmetric Cascade Masonry Grid */
-          <>
-            {/* Desktop Asymmetric Cascade Masonry */}
-            <div className="hidden lg:grid grid-cols-3 gap-8 items-start pt-10 pb-16">
-              {properties.slice(0, 3).map((property, index) => {
-                // Apply staggered vertical offsets to break standard rows and achieve "Cascade Masonry"
-                let yOffsetClass = "translate-y-0";
-                if (index === 0) yOffsetClass = "lg:translate-y-12";
-                if (index === 1) yOffsetClass = "lg:-translate-y-8";
-                if (index === 2) yOffsetClass = "lg:translate-y-0";
-
-                return (
-                  <div
-                    key={property.id}
-                    className={`transition-all duration-1000 ${yOffsetClass} ${
-                      isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                    }`}
-                    style={{ transitionDelay: `${index * 200}ms` }}
-                  >
-                    <PropertyCard 
-                      property={property} 
-                      variant="default" 
-                    />
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Standard Grid for tablets (2 columns) */}
-            <div className="hidden md:grid lg:hidden grid-cols-2 gap-6">
-              {properties.slice(0, 4).map((property) => (
-                <PropertyCard key={property.id} property={property} variant="compact" />
-              ))}
-            </div>
-
-            {/* Mobile Touch Carousel */}
-            <div className="flex md:hidden overflow-x-auto gap-5 pb-6 snap-x hide-scrollbar -mx-6 px-6">
-              {properties.map((property) => (
-                <div
-                  key={property.id}
-                  className="snap-center shrink-0 w-[82vw]"
-                >
-                  <PropertyCard property={property} variant="compact" />
-                </div>
-              ))}
-            </div>
-          </>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {properties.map((property) => (
+              <PropertyCard key={property.id} property={property} />
+            ))}
+          </div>
         )}
       </div>
 

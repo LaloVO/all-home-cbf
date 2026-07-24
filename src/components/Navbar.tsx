@@ -26,7 +26,7 @@ const Navbar = () => {
     { href: '/#inicio', label: 'Inicio' },
     { href: '/#filosofia', label: 'Nosotros' },
     { href: '/mapa', label: 'Propiedades' },
-    { href: '/solicita-inmueble', label: 'Búsqueda Inteligente' },
+    { href: '/desarrollos', label: 'Desarrollos' },
     { href: '/#contacto', label: 'Contacto' },
   ];
 

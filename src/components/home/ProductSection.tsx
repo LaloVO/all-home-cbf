@@ -16,7 +16,7 @@ const ProductSection = () => {
       desc: "Explora la selección de residencias y desarrollos curados en Saltillo. Te acompañamos desde el análisis de mercado hasta la firma notarial presencial.",
       bullets: ["Casas curadas de alta plusvalía", "Apoyo en créditos y finanzas", "Auditoría legal de escrituración"],
       ctaText: "Explorar Inmuebles",
-      action: () => navigate('/mapa')
+      action: () => navigate('/solicita-inmueble')
     },
     {
       id: 'vender' as const,
@@ -27,7 +27,7 @@ const ProductSection = () => {
       desc: "Listamos tu propiedad usando estrategias de marketing digital del más alto impacto visual y Big Data comparativo para vender al precio idóneo.",
       bullets: ["Valuación comercial especializada", "Publicación en portales líderes", "Filtro de prospectos solventes"],
       ctaText: "Registrar Propiedad",
-      action: () => navigate('/solicita-inmueble')
+      action: () => navigate('/vender-propiedad')
     },
     {
       id: 'rentar' as const,

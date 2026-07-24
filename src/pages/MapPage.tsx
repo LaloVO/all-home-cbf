@@ -5,13 +5,13 @@ import Navbar from '@/components/Navbar';
 import PropertyFilters, { Filters, DEFAULT_FILTERS } from '@/components/map/PropertyFilters';
 import PropertyMap from '@/components/map/PropertyMap';
 import PropertyCard from '@/components/PropertyCard';
-import { useProperties } from '@/hooks/useProperties';
+import { usePropertyCatalog } from '@/hooks/usePropertyCatalog';
 import { useSiteUser } from '@/hooks/useSiteUser';
 
 const MapPage = () => {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [viewMode, setViewMode] = useState<'map' | 'list'>('map');
-  const { properties, isLoading } = useProperties({ limit: 100 });
+  const { standaloneUnits: properties, isLoading } = usePropertyCatalog();
   const { site } = useSiteUser();
 
   const mapboxToken = site?.platform_config?.mapbox_token ?? '';
